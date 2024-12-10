@@ -1,0 +1,10 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.ai.copilot-chat",
+    "lazyvim.plugins.extras.lang.java"
+  ],
+  "news": {
+    "NEWS.md": "7429"
+  },
+  "version": 7
+}
