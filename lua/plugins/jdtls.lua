@@ -12,7 +12,18 @@ return {
     opts = {
       -- make sure mason installs the server
       servers = {
-        jdtls = {},
+        jdtls = {
+          settings = {
+            java = {
+              configuration = {
+                updateBuildConfiguration = "interactive", -- or "manual"
+              },
+              project = {
+                referencedLibraries = {}, -- 빈 배열로 설정
+              },
+            },
+          },
+        },
       },
       setup = {
         jdtls = function()
@@ -61,6 +72,7 @@ return {
               opts.jdtls_config_dir(project_name),
               "-data",
               opts.jdtls_workspace_dir(project_name),
+              "-no-persistent-setting",
             })
           end
           return cmd
