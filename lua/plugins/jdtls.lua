@@ -21,6 +21,11 @@ return {
               project = {
                 referencedLibraries = {}, -- set empty array not to create config files
               },
+              format = {
+                settings = {
+                  url = "$PFDT/config/eclipse-java-google-style.xml",
+                },
+              },
             },
           },
         },
@@ -89,8 +94,19 @@ return {
                 enabled = "all",
               },
             },
+            format = {
+              settings = {
+                url = "$PFDT/config/eclipse-java-google-style.xml",
+              },
+            },
           },
         },
+        -- on_attach = function(client, bufnr)
+        --   if vim.bo[bufnr].filetype == "java" then
+        --     vim.bo[bufnr].shiftwidth = 4
+        --     vim.bo[bufnr].tabstop = 4
+        --   end
+        -- end,
       }
     end,
   },
