@@ -12,23 +12,7 @@ return {
     opts = {
       -- make sure mason installs the server
       servers = {
-        jdtls = {
-          settings = {
-            java = {
-              configuration = {
-                updateBuildConfiguration = "interactive", -- or "manual"
-              },
-              project = {
-                referencedLibraries = {}, -- set empty array not to create config files
-              },
-              format = {
-                settings = {
-                  url = "$PFDT/config/eclipse-java-google-style.xml",
-                },
-              },
-            },
-          },
-        },
+        jdtls = {},
       },
       setup = {
         jdtls = function()
@@ -91,8 +75,14 @@ return {
           java = {
             inlayHints = {
               parameterNames = {
-                enabled = "all",
+                enabled = "none",
               },
+            },
+            configuration = {
+              updateBuildConfiguration = "manual", -- or "manual"
+            },
+            project = {
+              referencedLibraries = {}, -- set empty array not to create config files
             },
             format = {
               settings = {
@@ -101,12 +91,6 @@ return {
             },
           },
         },
-        -- on_attach = function(client, bufnr)
-        --   if vim.bo[bufnr].filetype == "java" then
-        --     vim.bo[bufnr].shiftwidth = 4
-        --     vim.bo[bufnr].tabstop = 4
-        --   end
-        -- end,
       }
     end,
   },
