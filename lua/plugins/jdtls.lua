@@ -80,6 +80,13 @@ return {
             },
             configuration = {
               updateBuildConfiguration = "manual", -- or "manual"
+              runtimes = {
+                {
+                  -- use Java 8
+                  name = "JavaSE-1.8",
+                  path = "$JAVA8_HOME",
+                },
+              },
             },
             project = {
               referencedLibraries = {}, -- set empty array not to create config files
