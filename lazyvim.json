@@ -2,7 +2,9 @@
   "extras": [
     "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.ai.copilot-chat",
-    "lazyvim.plugins.extras.lang.java"
+    "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.lang.java",
+    "lazyvim.plugins.extras.lang.markdown"
   ],
   "news": {
     "NEWS.md": "7429"
