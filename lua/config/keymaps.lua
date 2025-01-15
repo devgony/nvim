@@ -42,6 +42,14 @@ safe_del_keymap("x", "s")
 map({ "v" }, "J", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map({ "v" }, "K", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
--- map({ "i" }, "jk", "<esc>", { desc = "enter normal mode" })
-map({ "i" }, "jj", "<esc>", { desc = "enter normal mode" })
--- map({ "i" }, "<esc>", "<esc>", { normap = true, desc = "enter normal mode" })
+map({ "i" }, "jk", "<esc>", { desc = "enter normal mode" })
+
+local function toggle_copilot()
+  local clients = package.loaded["copilot"] and LazyVim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
+  if #clients > 0 then
+    vim.cmd("Copilot disable")
+  else
+    vim.cmd("Copilot enable")
+  end
+end
+map({ "n" }, "<leader>ai", toggle_copilot, { desc = "Toggle Copilot Intellisense" })
