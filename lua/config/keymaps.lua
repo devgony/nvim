@@ -36,6 +36,9 @@ safe_del_keymap("n", "<M-n>")
 safe_del_keymap("i", "<M-n>")
 safe_del_keymap("v", "<M-n>")
 
+safe_del_keymap("n", "s")
+safe_del_keymap("x", "s")
+
 map({ "v" }, "J", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map({ "v" }, "K", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
