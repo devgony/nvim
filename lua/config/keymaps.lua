@@ -53,3 +53,6 @@ local function toggle_copilot()
   end
 end
 map({ "n" }, "<leader>ai", toggle_copilot, { desc = "Toggle Copilot Intellisense" })
+
+-- inoremap ₩ `
+map({ "i" }, "₩", "`", { desc = "₩ to ` in insert mode" })
