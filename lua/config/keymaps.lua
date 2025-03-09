@@ -56,3 +56,10 @@ map({ "n" }, "<leader>ai", toggle_copilot, { desc = "Toggle Copilot Intellisense
 
 -- inoremap ₩ `
 map({ "i" }, "₩", "`", { desc = "₩ to ` in insert mode" })
+
+----
+map("i", "<A-j>", "<nop>", { desc = "Disabled for testing" })
+map("i", "<A-k>", "<nop>", { desc = "Disabled for testing" })
+map("i", "<esc>", "<esc>", { desc = "Restore default escape" })
+map("i", "<C-s>", "<nop>", { desc = "Disabled for testing" })
+map("i", "<S-Tab>", "<nop>", { desc = "Disabled for testing" })

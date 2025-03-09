@@ -4,7 +4,7 @@ return {
     opts = {
       terminal = {
         win = {
-          height = 0.9,
+          height = 0.95,
         },
       },
     },
