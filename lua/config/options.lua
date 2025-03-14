@@ -4,4 +4,6 @@
 local opt = vim.opt
 opt.shiftwidth = 4 -- Size of an --indent
 opt.clipboard = "unnamedplus"
+
+vim.g.snacks_animate = false -- to use v13 no_animate
 -- opt.langmap = "ㅁa,ㅠb,ㅊc,ㅇd,ㄷe,ㄹf,ㅎg,ㅗh,ㅑi,ㅓj,ㅏk,ㅣl,ㅡm,ㅜn,ㅐo,ㅔp,ㅂq,ㄱr,ㄴs,ㅅt,ㅕu,ㅍv,ㅈw,ㅌx,ㅛy,ㅋz"
