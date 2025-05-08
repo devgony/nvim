@@ -3,11 +3,6 @@
 -- Add any additional keymaps here
 local map = LazyVim.safe_keymap_set
 
-map("n", "<c-t>", function()
-  Snacks.terminal(nil, { cwd = LazyVim.root() })
-end, { desc = "Terminal (Root Dir)" })
-map("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-
 -- map({ "n", "i", "v" }, "<M-j>", "<nop>", { desc = "Disable <M-j>" })
 -- map({ "n", "i", "v" }, "<M-k>", "<nop>", { desc = "Disable <M-k>" })
 --
