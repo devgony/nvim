@@ -6,13 +6,14 @@ return {
     opts = {
       provider = "copilot",
       mode = "legacy",
+
       -- cursor_applying_provider = "copilot",
       -- behaviour = {
       --   enable_cursor_planning_mode = true, -- enable cursor planning mode!
       -- },
       copilot = {
-        model = "claude-3.7-sonnet-thought",
-        -- model = "gemini-2.5-pro",
+        -- model = "claude-3.7-sonnet-thought",
+        model = "gemini-2.5-pro",
         -- disable_tools = false,
       },
       -- openai = {
