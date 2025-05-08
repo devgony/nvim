@@ -5,6 +5,7 @@ return {
     version = false, -- Never set this value to "*"! Never!
     opts = {
       provider = "copilot",
+      mode = "legacy",
       -- cursor_applying_provider = "copilot",
       -- behaviour = {
       --   enable_cursor_planning_mode = true, -- enable cursor planning mode!
