@@ -11,8 +11,10 @@ return {
         enable_cursor_planning_mode = true, -- enable cursor planning mode!
       },
       copilot = {
+        model = "claude-sonnet-4",
         -- model = "claude-3.7-sonnet-thought",
-        model = "gemini-2.5-pro",
+        -- model = "claude-3.7-sonnet",
+        -- model = "gemini-2.5-pro",
         -- disable_tools = false,
       },
       -- openai = {
