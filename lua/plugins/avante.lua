@@ -5,17 +5,19 @@ return {
     version = false, -- Never set this value to "*"! Never!
     opts = {
       provider = "copilot",
-      mode = "legacy",
+      -- mode = "legacy",
       cursor_applying_provider = "copilot",
       behaviour = {
         enable_cursor_planning_mode = true, -- enable cursor planning mode!
       },
-      copilot = {
-        model = "claude-sonnet-4",
-        -- model = "claude-3.7-sonnet-thought",
-        -- model = "claude-3.7-sonnet",
-        -- model = "gemini-2.5-pro",
-        -- disable_tools = false,
+      providers = {
+        copilot = {
+          model = "claude-sonnet-4",
+          -- model = "claude-3.7-sonnet-thought",
+          -- model = "claude-3.7-sonnet",
+          -- model = "gemini-2.5-pro",
+          -- disable_tools = false,
+        },
       },
       -- openai = {
       --   endpoint = "https://api.openai.com/v1",
