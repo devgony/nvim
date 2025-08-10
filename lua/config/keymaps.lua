@@ -51,3 +51,46 @@ map({ "n" }, "<leader>ai", toggle_copilot, { desc = "Toggle Copilot Intellisense
 
 -- inoremap ₩ `
 map({ "i" }, "₩", "`", { desc = "₩ to ` in insert mode" })
+
+-- Function to copy file path with line number(s) to clipboard
+local function copy_file_line_to_clipboard()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local file_path = vim.api.nvim_buf_get_name(bufnr)
+  local cwd = vim.fn.getcwd()
+
+  -- Get relative path
+  local relative_path = vim.fn.fnamemodify(file_path, ":~:.")
+  if relative_path == "" then
+    relative_path = "[No Name]"
+    return
+  end
+
+  local mode = vim.fn.mode()
+  local result
+
+  if mode == "v" or mode == "V" or mode == "\22" then -- Visual modes
+    local start_line = vim.fn.line("v")
+    local end_line = vim.fn.line(".")
+
+    -- Ensure start_line <= end_line
+    if start_line > end_line then
+      start_line, end_line = end_line, start_line
+    end
+
+    if start_line == end_line then
+      result = string.format("%s:%d", relative_path, start_line)
+    else
+      result = string.format("%s:%d-%d", relative_path, start_line, end_line)
+    end
+  else -- Normal mode
+    local line_num = vim.fn.line(".")
+    result = string.format("%s:%d", relative_path, line_num)
+  end
+
+  -- Copy to clipboard
+  vim.fn.setreg("+", result)
+  vim.notify("Copied: " .. result)
+end
+
+-- Keymap for copying file:line to clipboard
+map({ "n", "v" }, "<leader>yf", copy_file_line_to_clipboard, { desc = "Copy file:line to clipboard" })
